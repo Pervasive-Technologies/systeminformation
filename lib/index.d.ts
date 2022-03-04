@@ -111,6 +111,14 @@ export namespace Systeminformation {
     chipset?: number;
   }
 
+  interface TpuTemperatureData {
+    main: number;
+    cores: number[];
+    max: number;
+    socket?: number[];
+    chipset?: number;
+  }
+
   interface MemData {
     total: number;
     free: number;
@@ -929,6 +937,7 @@ export function cpuFlags(cb?: (data: string) => any): Promise<string>;
 export function cpuCache(cb?: (data: Systeminformation.CpuCacheData) => any): Promise<Systeminformation.CpuCacheData>;
 export function cpuCurrentSpeed(cb?: (data: Systeminformation.CpuCurrentSpeedData) => any): Promise<Systeminformation.CpuCurrentSpeedData>;
 export function cpuTemperature(cb?: (data: Systeminformation.CpuTemperatureData) => any): Promise<Systeminformation.CpuTemperatureData>;
+export function tpuTemperature(cb?: (data: Systeminformation.TpuTemperatureData) => any): Promise<Systeminformation.TpuTemperatureData>;
 export function currentLoad(cb?: (data: Systeminformation.CurrentLoadData) => any): Promise<Systeminformation.CurrentLoadData>;
 export function fullLoad(cb?: (data: number) => any): Promise<number>;
 
